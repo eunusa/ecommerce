@@ -9,3 +9,5 @@ npm instaill -g yarn
 
 
 ES7+ React/Redux/React-Native snippets 설치
+
+rfc -> react funtional component 
