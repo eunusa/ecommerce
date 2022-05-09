@@ -18,4 +18,5 @@ yarn add styled-components 설치 [ React 컴포넌트에 완전히 격리된 �
 [확장]vscode-styled-components 설치
 
 
-[material UI]yarn add @mui/material @emotion/react @emotion/styled 
+[material UI]yarn add @mui/icons-material
+
