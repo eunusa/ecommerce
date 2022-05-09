@@ -11,3 +11,8 @@ npm instaill -g yarn
 ES7+ React/Redux/React-Native snippets 설치
 
 rfc -> react funtional component 
+
+yarn add styled-components 설치 [ React 컴포넌트에 완전히 격리된 스타일을 적용할 수 있게 됩니다.]
+
+
+[확장]vscode-styled-components 설치
