@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import {useEffect, useState} from 'react';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material'
 import { sliderItems } from '../data';
 
@@ -35,7 +36,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(0vw); //좌우로 이동
+    transform: translateX(${props=>props.slideIndex * -100}vw); //좌우로 이동 state는 props로 불러오자.
 `;
 
 const Slide = styled.div`
@@ -43,7 +44,7 @@ const Slide = styled.div`
     height: 100vh;
     display: flex;
     align-items: center; //세로 중심축
-    background-color: #${props=>props.bg};
+    background-color: #${props=>props.bg}; //#컬러 ㅎㅎ
 
 `;
 const ImgContainer = styled.div`
@@ -80,12 +81,12 @@ const Button = styled.button`
 const Slider = () => {
 
     const [slideIndex, setslideIndex] = useState(0);
-    const handleClick = (direction) =>{};
+    const handleClick = (direction) =>{
 
         if(direction==="left"){
             setslideIndex(slideIndex > 0 ? slideIndex -1 : 2 );
         } else{setslideIndex(slideIndex < 2 ? slideIndex + 1 : 0 );
-        };
+        }};
 
         
   return (
@@ -95,7 +96,7 @@ const Slider = () => {
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
 
-                {sliderItems.map(item=>{
+                {sliderItems.map((item)=>( //item map 돌아가는 순서 입력
 
                 <Slide bg={item.bg}>
                     
@@ -103,12 +104,12 @@ const Slider = () => {
                     <Image src={item.Image} /> {/* 이미지파일은 public 폴더에 넣는다. */}
                 </ImgContainer>
                 <InfoContainer>
-                    <Title>{item.Title}</Title>
+                    <Title>{item.title}</Title>
                     <Desc>{item.desc}</Desc>
                     <Button>SHOW NOW</Button>
                 </InfoContainer>
                 </Slide>
-                })};
+                ))}
            
             </Wrapper> 
             <Arrow direction="right" onClick={()=>handleClick("right")}>
