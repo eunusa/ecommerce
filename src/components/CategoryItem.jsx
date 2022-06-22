@@ -1,9 +1,11 @@
 import  styled  from "styled-components" //라이브러리는 소문자.
+import { mobile } from "../responsive"
 
 const Container = styled.div`
 flex: 1;
 margin: 3px;
 position: relative;
+
 `
 
 const Info = styled.div`
@@ -23,6 +25,8 @@ const Image = styled.img` //div로 넣으면 이미지 안나옴, img 로 처리
 width: 100%;
 height: 100%;
 object-fit: cover; // img video object svg 일정크기로 재가공한다.
+${mobile({height:"30vh"})}
+
 `
 const Title = styled.h1`
     color:white;

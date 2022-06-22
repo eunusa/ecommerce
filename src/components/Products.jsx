@@ -2,12 +2,15 @@
 import styled from 'styled-components'
 import { popularProducts, categories } from "../data"
 import Product from "./Product"
+import { mobile } from '../responsive';
 
 const Container = styled.div`
 display: flex;
 padding: 20px;
 flex-wrap: wrap; //가능한 영역내에 여러행으로 나누어 표현한다.
 justify-content: space-between;
+${mobile({padding:"1px"})}
+
 `;
 
 

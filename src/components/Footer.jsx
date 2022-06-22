@@ -7,11 +7,14 @@ import MapIcon from '@mui/icons-material/Map';
 import EmailIcon from '@mui/icons-material/Email';
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive';
+
 
 const Container = styled.div`
 display: flex;
 height: 30vh;
 background-color: #958978;
+${mobile({height:"90vh",flexDirection:"column"})}
 
 `;
 const Left = styled.div`
