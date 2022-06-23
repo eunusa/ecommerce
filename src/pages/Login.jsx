@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Navbar from "../components/Navbar"
-
+import { mobile } from "../responsive";
 
 
 const MainContainer = styled.div`
@@ -19,6 +19,7 @@ const Wrapper = styled.div`
     width: 20%;
     padding: 20px;
     background-color: rgb(234, 255, 221);
+    ${mobile({width:"90%"})};
    
 ;
 

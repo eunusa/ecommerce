@@ -4,27 +4,35 @@ import Announcement from "../components/Announcement"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Newsletter from "../components/Newsletter"
+import { mobile } from "../responsive"
+
 
 const Container = styled.div``;
 const Wrapper = styled.div`
     display: flex;
     padding: 50px;
+    ${mobile({padding:"5px",flexDirection:"column"})};
+    
 `;
 const ImgContainer = styled.div`
     flex: 1;
     display: flex;
     justify-content: center;
+
 `;
 const Image = styled.img`
     object-fit: cover;
-    height: 100%;
     height: 70vh;
+    ${mobile({height:"50vh"})};
+    
 `;
 const InfoContainer = styled.div`
     flex: 1;
     padding: 0px 50px;
 `;
 const Title = styled.h1`
+    ${mobile({marginTop:"10px"})};
+
 `;
 const Dsec = styled.p`
     font-size:20px;
@@ -72,6 +80,8 @@ const AddContainer = styled.div`
     width: 50%;
     align-items: center;
     justify-content: space-between;
+    ${mobile({justifyContent:"center",flexDirection:"column",width:"100%"})};
+    
 `;
 
 const Amountcontainer = styled.div`
@@ -102,6 +112,8 @@ const Button = styled.button`
     &:hover{
         background-color: #dfdfdf;
     }
+    ${mobile({padding:"15px 50px",margin:"20px 0px"})};
+
 `;
 
 

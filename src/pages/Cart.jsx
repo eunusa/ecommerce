@@ -3,11 +3,16 @@ import styled from 'styled-components'
 import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { mobile } from '../responsive';
 
+const Container = styled.div`
 
-const Container = styled.div``;
+`;
+
 const Wrapper = styled.div`
     padding: 20px;
+    ${mobile({padding:"10px"})};
+
 
 `;
 const Title = styled.h1`
@@ -29,15 +34,21 @@ const TopButton = styled.button`
     border: ${props=>props.type === "filled"&&"none"};
     background-color: ${props=>props.type === "filled"?"black ":"transparent"};
     color: ${props=>props.type === "filled"&&"white"};
+    ${mobile({fontSize:"15px",padding:"5px",margin:"5px"})};
 
 `;
 const Buttom = styled.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({flexDirection:"column"})};
+
 `;
 
 const Info = styled.div`
     flex: 3;
+    
+    ${mobile({flex:"none"})};
+
 `;
 const Summary = styled.div`
     flex: 1;
@@ -48,10 +59,13 @@ const Summary = styled.div`
     border: 0.5px solid lightgray;
     border-radius: 10px;
     padding: 20px;
+    ${mobile({flex:"none",height:"55vh",margin:"10px 0px"})};
+
 
 `;
 
 const TopsTexts = styled.div`
+${mobile({display:"none"})};
 
 `;
 const TopText = styled.span`
@@ -59,6 +73,15 @@ text-decoration: underline;
 cursor: pointer;
 margin: 0px 10px;
 font-size: 20px;
+
+`;
+
+const TopTextMobile = styled.div`
+
+display:none;
+justify-content: center;
+${mobile({display:"flex"})};
+
 `;
 
 const Product = styled.div`
@@ -75,11 +98,13 @@ const Details = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 `;
 const ProductName = styled.span`
-
+${mobile({fontSize:"12px"})};
 `;
 const ProductID = styled.span`
+${mobile({fontSize:"12px"})};
 
 `;
 const ProductColor = styled.div`
@@ -89,6 +114,7 @@ const ProductColor = styled.div`
     background-color: ${props=>props.color};
 `;
 const ProductSize = styled.span`
+${mobile({fontSize:"12px"})};
 
 `;
 const PriceDetail = styled.span`
@@ -100,6 +126,8 @@ const PriceDetail = styled.span`
 `;
 const Image = styled.img`
 width: 200px;
+${mobile({width:"120px",objectFit: "scale-down"})};
+
 
 
 `;
@@ -117,6 +145,8 @@ const Productmount = styled.div`
 const ProductPrice = styled.span`
 
     font-size: 30px;
+${mobile({fontSize:"20px"})};
+
 `;
 
 const Hr = styled.hr`
@@ -163,7 +193,13 @@ const Cart = () => {
                     
                 </TopsTexts>
                 <TopButton type="filled">CHECKOUT NOW</TopButton>
+
+                
             </Top>
+            <TopTextMobile>
+                    <TopText>Shopping Bac(2)</TopText>
+                    <TopText>Your Wishlist</TopText>
+            </TopTextMobile>
             <Buttom>
                 <Info>
                     <Product>
